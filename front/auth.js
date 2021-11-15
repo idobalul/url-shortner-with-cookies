@@ -1,4 +1,4 @@
-import './styles.css';
+import './auth.css';
 import axios from 'axios';
 import { isEmpty } from 'validator';
 
@@ -20,21 +20,21 @@ async function signIn(username, password) {
       username,
       password,
     });
-    console.log(response);
+    await console.log(response.data);
   } catch (error) {
-    console.log(error);
+    console.log(error.response.data);
   }
 }
 
 async function signUp(username, password) {
   try {
-    const response = axios.post(`${BASE_URL}/auth/signup`, {
+    const response = await axios.post(`${BASE_URL}/auth/signup`, {
       username,
       password,
     });
-    console.log(response);
+    console.log(response.data);
   } catch (error) {
-    console.log(error);
+    console.log(error.response.data);
   }
 }
 

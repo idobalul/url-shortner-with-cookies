@@ -5,6 +5,7 @@ const cors = require('cors');
 const path = require('path');
 // const jtw = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const authRouter = require('./routers/authRouter');
 
 const DB = process.env.DATABASE;
 const port = process.env.PORT || 3000;
@@ -17,11 +18,15 @@ mongoose.connect(DB).then(() => {
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-app.use('/', express.static(path.resolve('./dist')));
+app.use(express.static(`${__dirname}/dist`));
+
+app.get('/auth', (req, res) => {
+  res.sendFile(path.resolve('./dist/auth.html'));
+});
+app.use('/auth', authRouter);
 
 app.get('/', (req, res) => {
-  res.send('hi');
-  // res.sendFile(express.static(path.resolve('./dist/index.html')));
+  res.sendFile(path.resolve('./dist/index.html'));
 });
 
 app.listen(port, () => {
