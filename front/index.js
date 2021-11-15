@@ -5,7 +5,7 @@ import { isURL } from 'validator';
 /** ******************
  * Global variables *
  ******************* */
-const BASE_URL = 'https://micr0-url.herokuapp.com';
+const BASE_URL = 'http://localhost:3000';
 const urlInput = document.getElementById('url-input');
 const submitButton = document.getElementById('submit-url');
 const errorMessage = document.getElementById('error-message');

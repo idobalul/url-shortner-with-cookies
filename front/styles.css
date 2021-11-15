@@ -96,3 +96,36 @@ a:visited {
   height: 90%;
   cursor: pointer;
 }
+
+/* auth.html */
+#user-inputs {
+  display: flex;
+  flex-direction: column;
+  height: 40vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#user-inputs > label {
+  color: rgba(255, 255, 255, 0.856);
+  font-size: 20px;
+}
+
+#user-inputs > input {
+  height: 20%;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#user-inputs button {
+  background-color: rgb(30, 30, 228);
+  height: 10vh;
+  width: 20vw;
+  border-radius: 10px;
+  border: none;
+  color: rgba(255, 255, 255, 0.856);
+  font-size: 20px;
+  margin-right: 2vw;
+}

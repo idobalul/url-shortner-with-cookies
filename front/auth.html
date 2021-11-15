@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./favicon.ico" />
+    <link href="./styles.css" rel="stylesheet" type="text/css" />
+    <script defer src="./auth.js"></script>
+    <title>Sign In</title>
+</head>
+<body>
+    <h1>Sign-In / Sign-Up</h1>
+    <main>
+        <div id="user-inputs">
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="Username must be longer then 3 letters">
+            <label for="password">Password</label>
+            <input type="text" id="password" placeholder="Password must have length of 8 - 12" minlength="8" maxlength="12">
+            <div id="buttons">
+                <button id="sign-in">Sign-In</button>
+                <button id="sign-up">Sign-Up</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

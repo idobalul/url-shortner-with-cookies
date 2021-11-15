@@ -12,7 +12,10 @@ const stylesHandler = isProduction
   : 'style-loader';
 
 const config = {
-  entry: './front/index.js',
+  entry: {
+    index: './front/index.js',
+    auth: './front/auth.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
@@ -25,7 +28,11 @@ const config = {
       template: './front/index.html',
       favicon: './front/favicon.ico',
     }),
-
+    new HtmlWebpackPlugin({
+      filename: 'auth.html',
+      template: './front/auth.html',
+      favicon: './front/favicon.ico',
+    }),
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],
