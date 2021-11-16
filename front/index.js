@@ -11,15 +11,20 @@ const submitButton = document.getElementById('submit-url');
 const errorMessage = document.getElementById('error-message');
 const outPut = document.getElementById('output');
 const userSection = document.getElementById('user-section');
+const logoutButton = document.getElementById('log-out');
 
 outPut.classList.add('hidden');
 
-/* **********************************************
- * Loading the logged user name if there is one *
- ********************************************** */
+/* ************************
+ * User related functions *
+ ************************ */
+
+logoutButton.addEventListener('click', () => {
+  document.cookie = 'token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT';
+  window.location.reload();
+});
 
 window.onload = async () => {
-  // document.cookie.substring(6)
   if (document.cookie.length !== 0) {
     try {
       const user = await axios.get(`${BASE_URL}/user`);
@@ -27,6 +32,8 @@ window.onload = async () => {
     } catch (error) {
       console.log(error);
     }
+  } else {
+    logoutButton.hidden = true;
   }
 };
 
