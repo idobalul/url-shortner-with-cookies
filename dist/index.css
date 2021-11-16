@@ -1,0 +1,104 @@
+@import url(https://fonts.googleapis.com/css2?family=Acme&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap);
+body {
+  font-family: 'Acme';
+  background-color: #e4e7ed;
+}
+
+main {
+  background-color: rgb(3, 30, 66);
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: rgb(253, 97, 24);
+}
+
+#user-section {
+  font-size: 25px;
+  font-family: 'Zen Kaku Gothic New';
+  margin-bottom: 25px;
+}
+
+#input-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15vh;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgb(3, 30, 66);
+}
+
+#input-section > #submit-url {
+  background-color: rgb(30, 30, 228);
+  height: 70%;
+  width: 20vw;
+  border-radius: 10px;
+  border: none;
+  color: rgba(255, 255, 255, 0.856);
+  font-size: 20px;
+}
+
+#input-section > #submit-url:hover {
+  cursor: pointer;
+}
+
+#input-section > #url-input {
+  height: 70%;
+  width: 60vw;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+}
+
+#error-message {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
+
+#output {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.hidden {
+  display: none !important;
+}
+
+a:link {
+  color: #089cff;
+  text-decoration: none;
+  font-family: 'Zen Kaku Gothic New';
+  font-weight: 600;
+}
+a:visited {
+  color: #089cff;
+  text-decoration: none;
+}
+
+.copy {
+  background-color: rgb(241, 241, 241);
+  border-radius: 10px;
+  border-color: steelblue;
+  color: #089cff;
+  font-family: 'Zen Kaku Gothic New';
+  font-weight: 600;
+  font-size: 18px;
+  width: 10%;
+  height: 90%;
+  cursor: pointer;
+}
+
