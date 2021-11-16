@@ -69,7 +69,6 @@ function addCopyButton() {
  * EventListeners *
  ***************** */
 submitButton.addEventListener('click', (e) => {
-  console.log('click');
   e.stopPropagation();
   e.preventDefault();
   clearPage();

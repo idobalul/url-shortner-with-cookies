@@ -3,13 +3,12 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const cors = require('cors');
 const path = require('path');
-const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const { nanoid } = require('nanoid');
 const authRouter = require('./routers/authRouter');
 const Url = require('./models/urlSchema');
+const { authenticateToken } = require('./middleware/userHandler');
 
-const secret = process.env.JWT_SECRET;
 const DB = process.env.DATABASE;
 const port = process.env.PORT || 3000;
 const app = express();
@@ -56,21 +55,3 @@ app.use('/auth', authRouter);
 app.listen(port, () => {
   console.log(`listening on port: ${port}`);
 });
-
-function authenticateToken(req, res, next) {
-  const { token } = req.cookies;
-  console.log(token);
-  if (token === undefined) {
-    console.log('in 401');
-    return res.status(401).send('Unauthorized try to sign in or sign up');
-  }
-
-  jwt.verify(token, secret, (err, user) => {
-    if (err) {
-      return res.status(403).send('Try to sign in again');
-    }
-    console.log('user:', user);
-    req.body.user = user;
-    next();
-  });
-}

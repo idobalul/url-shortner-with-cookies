@@ -10,6 +10,7 @@ const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
 const signInButton = document.getElementById('sign-in');
 const signUpButton = document.getElementById('sign-up');
+const errorMessage = document.getElementById('error-message');
 
 /** ***************
  * API functions *
@@ -23,6 +24,7 @@ async function signIn(username, password) {
     window.location.href = await response.data;
   } catch (error) {
     console.log(error.response.data);
+    errorMessage.innerText = error.response.data;
   }
 }
 
@@ -33,8 +35,12 @@ async function signUp(username, password) {
       password,
     });
     console.log(response.data);
+    errorMessage.style.color = '#45e026';
+    errorMessage.innerText = response.data;
+    signUpButton.hidden = true;
   } catch (error) {
     console.log(error.response.data);
+    errorMessage.innerText = error.response.data;
   }
 }
 
