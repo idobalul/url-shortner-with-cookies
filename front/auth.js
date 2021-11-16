@@ -20,7 +20,7 @@ async function signIn(username, password) {
       username,
       password,
     });
-    await console.log(response.data);
+    window.location.href = await response.data;
   } catch (error) {
     console.log(error.response.data);
   }

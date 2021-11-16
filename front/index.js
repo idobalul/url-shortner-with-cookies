@@ -25,7 +25,8 @@ async function shortUrl(url) {
     addCopyButton();
     outPut.classList.remove('hidden');
   } catch (error) {
-    console.log(error);
+    console.log(error.response.data);
+    errorMessage.innerText = error.response.data;
   }
 }
 
@@ -67,7 +68,10 @@ function addCopyButton() {
 /** ****************
  * EventListeners *
  ***************** */
-submitButton.addEventListener('click', () => {
+submitButton.addEventListener('click', (e) => {
+  console.log('click');
+  e.stopPropagation();
+  e.preventDefault();
   clearPage();
   if (isURL(urlInput.value)) {
     shortUrl(urlInput.value);

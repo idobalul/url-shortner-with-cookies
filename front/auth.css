@@ -19,6 +19,12 @@ h1 {
   color: rgb(253, 97, 24);
 }
 
+#error-message {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
+
 #user-inputs {
   display: flex;
   flex-direction: column;
