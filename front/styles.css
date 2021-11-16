@@ -19,6 +19,12 @@ h1 {
   color: rgb(253, 97, 24);
 }
 
+#user-section {
+  font-size: 25px;
+  font-family: 'Zen Kaku Gothic New';
+  margin-bottom: 25px;
+}
+
 #input-section {
   display: flex;
   justify-content: space-around;

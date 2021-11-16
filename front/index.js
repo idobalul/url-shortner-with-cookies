@@ -10,8 +10,25 @@ const urlInput = document.getElementById('url-input');
 const submitButton = document.getElementById('submit-url');
 const errorMessage = document.getElementById('error-message');
 const outPut = document.getElementById('output');
+const userSection = document.getElementById('user-section');
 
 outPut.classList.add('hidden');
+
+/* **********************************************
+ * Loading the logged user name if there is one *
+ ********************************************** */
+
+window.onload = async () => {
+  // document.cookie.substring(6)
+  if (document.cookie.length !== 0) {
+    try {
+      const user = await axios.get(`${BASE_URL}/user`);
+      userSection.innerText = `Welcome ${user.data}`;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+};
 
 /** ***************
  * API functions *

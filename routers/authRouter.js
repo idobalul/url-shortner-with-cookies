@@ -42,8 +42,8 @@ router.post('/login', async (req, res) => {
       res.status(400).send('Incorrect password');
       return;
     }
-    const token = jwt.sign({ username }, secret, { expiresIn: '600s' });
-    res.cookie('token', token, { maxAge: 120000 });
+    const token = jwt.sign({ username }, secret, { expiresIn: '1h' });
+    res.cookie('token', token, { maxAge: 3600000 });
     res.send('http://localhost:3000');
   } catch (error) {
     res.status(500).send('Oops something went wrong');
